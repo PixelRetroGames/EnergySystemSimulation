@@ -1,0 +1,128 @@
+{
+  "consumers" : [ {
+    "id" : 11,
+    "isBankrupt" : true,
+    "budget" : 71
+  }, {
+    "id" : 12,
+    "isBankrupt" : true,
+    "budget" : 76
+  }, {
+    "id" : 13,
+    "isBankrupt" : false,
+    "budget" : 30
+  }, {
+    "id" : 14,
+    "isBankrupt" : false,
+    "budget" : 35
+  }, {
+    "id" : 15,
+    "isBankrupt" : false,
+    "budget" : 40
+  }, {
+    "id" : 16,
+    "isBankrupt" : false,
+    "budget" : 5
+  }, {
+    "id" : 17,
+    "isBankrupt" : false,
+    "budget" : 21
+  }, {
+    "id" : 18,
+    "isBankrupt" : false,
+    "budget" : 37
+  }, {
+    "id" : 19,
+    "isBankrupt" : false,
+    "budget" : 58
+  }, {
+    "id" : 0,
+    "isBankrupt" : true,
+    "budget" : 38
+  }, {
+    "id" : 1,
+    "isBankrupt" : false,
+    "budget" : 42
+  }, {
+    "id" : 2,
+    "isBankrupt" : false,
+    "budget" : 30
+  }, {
+    "id" : 3,
+    "isBankrupt" : false,
+    "budget" : 5
+  }, {
+    "id" : 4,
+    "isBankrupt" : false,
+    "budget" : 33
+  }, {
+    "id" : 5,
+    "isBankrupt" : true,
+    "budget" : 78
+  }, {
+    "id" : 6,
+    "isBankrupt" : true,
+    "budget" : 70
+  }, {
+    "id" : 7,
+    "isBankrupt" : true,
+    "budget" : 77
+  }, {
+    "id" : 8,
+    "isBankrupt" : true,
+    "budget" : 70
+  }, {
+    "id" : 9,
+    "isBankrupt" : true,
+    "budget" : 68
+  }, {
+    "id" : 20,
+    "isBankrupt" : false,
+    "budget" : 79
+  }, {
+    "id" : 10,
+    "isBankrupt" : true,
+    "budget" : 66
+  } ],
+  "distributors" : [ {
+    "id" : 0,
+    "budget" : 1928,
+    "isBankrupt" : false,
+    "contracts" : [ ]
+  }, {
+    "id" : 1,
+    "budget" : 33,
+    "isBankrupt" : true,
+    "contracts" : [ {
+      "consumerId" : 2,
+      "price" : 5,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 0,
+      "price" : 5,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 3,
+      "price" : 5,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 1,
+      "price" : 3,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 4,
+      "price" : 3,
+      "remainedContractMonths" : 0
+    } ]
+  }, {
+    "id" : 2,
+    "budget" : 5,
+    "isBankrupt" : true,
+    "contracts" : [ ]
+  }, {
+    "id" : 3,
+    "budget" : 10,
+    "isBankrupt" : true,
+    "contracts" : [ ]
+  } ]
+}
