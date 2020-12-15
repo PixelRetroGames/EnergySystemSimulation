@@ -10,8 +10,14 @@ public final class Writer {
      * Opens file from path
      * @param path
      */
-    public Writer(final String path) throws IOException {
-        this.file = new FileWriter(path);
+    public Writer(final String path) {
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.file = fileWriter;
     }
 
     /**

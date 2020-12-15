@@ -1,34 +1,47 @@
-import ciolty.Implementation.JSON.InputReader;
-import ciolty.Implementation.JSON.JsonOutputConverter;
-import ciolty.Implementation.entities.InputData;
-import ciolty.Implementation.server.ImplementedServer;
-import ciolty.engine.JSON.JsonConverter;
+import ciolty.energySystemImplementation.JSON.InputReader;
+import ciolty.energySystemImplementation.JSON.JsonOutputConverter;
+import ciolty.energySystemImplementation.debugger.DebugLogger;
+import ciolty.energySystemImplementation.debugger.DebuggingVariables;
+import ciolty.energySystemImplementation.entities.InputData;
+import ciolty.energySystemImplementation.server.EnergySystemServer;
 import ciolty.engine.JSON.Writer;
-import ciolty.engine.server.Server;
 
-import java.lang.reflect.WildcardType;
+public final class Main {
+    private Main() {
+    }
 
-public class Main {
-    static int nrTest = 0;
-    public static void main(String[] args) throws Exception {
-        System.out.println(args[0]);
-        InputReader reader = new InputReader(args[0]);
-        InputData input = (InputData) reader.read();
+    static final int TEST_NUMBER_POSITION = 47;
+    static final int FILE_EXTENSION_LENGTH = 5;
 
-        Server server = new ImplementedServer(input);
+    private static String getTestNumber(final String path) {
+        return path.substring(TEST_NUMBER_POSITION,
+                path.length() - FILE_EXTENSION_LENGTH);
+    }
+
+    private static String getResultPath(final String path) {
+        return "myResults/" + "test_" + getTestNumber(path) + "_";
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(final String[] args) {
+        String inputFilePath = args[0];
+        String outputFilePath = args[1];
+
+        DebugLogger.deactivate();
+        DebugLogger.setPrintStream(System.out);
+        DebuggingVariables.setDebuggingActive(false);
+
+        InputReader reader = new InputReader(inputFilePath);
+        InputData input = reader.read();
+
+        EnergySystemServer server = new EnergySystemServer(input, getResultPath(inputFilePath));
+
         server.runAllActions();
-        System.out.println(server.getOutput());
 
-        Writer writer = new Writer(args[1]);
-        JsonConverter converter = new JsonOutputConverter();
-        writer.write(converter.convert(server.getOutput()));
+        Writer writer = new Writer(outputFilePath);
+        writer.write(JsonOutputConverter.convert(server.getOutput()));
         writer.close();
-
-        nrTest++;
-        writer = new Writer("myResults/" + "test_" + nrTest + ".json");
-        writer.write(converter.convert(server.getOutput()));
-        writer.close();
-
-        System.out.println(args[1]);
     }
 }

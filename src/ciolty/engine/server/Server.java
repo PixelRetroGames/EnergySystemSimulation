@@ -2,19 +2,17 @@ package ciolty.engine.server;
 
 import ciolty.engine.action.Output;
 
-import java.util.List;
-
 /**
  *  Hides the logic for setting up the action controller and running actions
  */
 public interface Server {
     /**
-     * Runs all actions and pushes results in List of Output
+     * Runs all actions
      */
     void runAllActions();
 
     /**
-     * @return Output resulted from running
+     * @return output resulted from running
      */
     Output getOutput();
 }

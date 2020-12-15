@@ -7,6 +7,10 @@ import java.util.List;
  * @param <T>
  */
 public interface Repository<T> {
+    /**
+     * @param key
+     * @param value
+     */
     void add(String key, T value);
 
     /**
@@ -15,6 +19,9 @@ public interface Repository<T> {
      */
     T get(String name);
 
+    /**
+     * @return all resources
+     */
     List<T> getAll();
 
     /**

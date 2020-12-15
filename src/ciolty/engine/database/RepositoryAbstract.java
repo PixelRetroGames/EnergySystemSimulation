@@ -1,7 +1,5 @@
 package ciolty.engine.database;
 
-import ciolty.Implementation.entities.ConsumerData;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +11,7 @@ public abstract class RepositoryAbstract<T> implements Repository<T> {
     }
 
     @Override
-    public void add(String key, T value) {
+    public final void add(final String key, final T value) {
         resourceManager.add(key, value);
     }
 
@@ -23,7 +21,7 @@ public abstract class RepositoryAbstract<T> implements Repository<T> {
     }
 
     @Override
-    public List<T> getAll() {
+    public final List<T> getAll() {
         return resourceManager.getAll();
     }
 

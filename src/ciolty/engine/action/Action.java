@@ -6,7 +6,7 @@ package ciolty.engine.action;
 public interface Action extends Actionable {
     /**
      * Called after setting the data, before execution.
-     * Can be overriden for initializing data and returning error messages.
+     * Can be overridden for initializing data and returning error messages.
      * @return null if no error
      */
     String start();
