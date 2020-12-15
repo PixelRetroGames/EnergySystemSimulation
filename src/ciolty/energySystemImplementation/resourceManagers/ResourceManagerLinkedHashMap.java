@@ -1,4 +1,4 @@
-package ciolty.VideoDBImplementation.resourceManagers;
+package ciolty.energySystemImplementation.resourceManagers;
 
 import ciolty.engine.database.ResourceManagerAbstract;
 

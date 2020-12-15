@@ -3,7 +3,7 @@ package ciolty.energySystemImplementation.repositories;
 import ciolty.energySystemImplementation.entities.ConsumerData;
 import ciolty.energySystemImplementation.entities.DistributorData;
 import ciolty.energySystemImplementation.entities.InputData;
-import ciolty.VideoDBImplementation.resourceManagers.ResourceManagerLinkedHashMap;
+import ciolty.energySystemImplementation.resourceManagers.ResourceManagerLinkedHashMap;
 import ciolty.engine.database.ResourceManager;
 import ciolty.engine.database.UnitOfWork;
 import ciolty.engine.server.Input;
