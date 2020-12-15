@@ -14,6 +14,9 @@ public final class Main {
     static final int FILE_EXTENSION_LENGTH = 5;
 
     private static String getTestNumber(final String path) {
+        if (!DebuggingVariables.isDebuggingActive()) {
+            return null;
+        }
         return path.substring(TEST_NUMBER_POSITION,
                 path.length() - FILE_EXTENSION_LENGTH);
     }
