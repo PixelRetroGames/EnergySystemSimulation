@@ -8,18 +8,33 @@ public final class DistributorData {
     private int contractLength;
     private int budget;
     private int infrastructureCost;
-    private int productionCost;
+    private int energyNeededKW;
+    private String producerStrategy;
 
+    private int productionCost;
     private int contractPrice;
     private boolean isBankrupt;
     private final List<ContractData> activeContracts = new ArrayList<>();
+    private List<Integer> producersIds = new ArrayList<>();
 
     public void setInitialInfrastructureCost(final int initialInfrastructureCost) {
         infrastructureCost = initialInfrastructureCost;
     }
 
-    public void setInitialProductionCost(final int initialProductionCost) {
-        productionCost = initialProductionCost;
+    public int getEnergyNeededKW() {
+        return energyNeededKW;
+    }
+
+    public void setEnergyNeededKW(int energyNeededKW) {
+        this.energyNeededKW = energyNeededKW;
+    }
+
+    public String getProducerStrategy() {
+        return producerStrategy;
+    }
+
+    public void setProducerStrategy(String producerStrategy) {
+        this.producerStrategy = producerStrategy;
     }
 
     public void setInitialBudget(final int initialBudget) {
@@ -74,24 +89,13 @@ public final class DistributorData {
         super();
     }
 
-    public DistributorData(final DistributorData other) {
-        id = other.id;
-        contractLength = other.contractLength;
-        budget = other.budget;
-        infrastructureCost = other.infrastructureCost;
-        productionCost = other.productionCost;
-        isBankrupt = other.isBankrupt;
-        contractPrice = other.contractPrice;
-    }
-
-    public DistributorData(final int id, final int contractLength,
-                           final int initialBudget, final int initialInfrastructureCost,
-                           final int initialProductionCost) {
-        this.id = id;
-        this.contractLength = contractLength;
-        this.budget = initialBudget;
-        this.infrastructureCost = initialInfrastructureCost;
-        this.productionCost = initialProductionCost;
+    public DistributorData(DistributorData data) {
+        id = data.getId();
+        contractLength = data.getId();
+        budget = data.getBudget();
+        infrastructureCost = data.getInfrastructureCost();
+        energyNeededKW = data.getEnergyNeededKW();
+        producerStrategy = data.getProducerStrategy();
     }
 
     public int getId() {
@@ -110,11 +114,11 @@ public final class DistributorData {
         return infrastructureCost;
     }
 
-    public int getInitialProductionCost() {
-        return productionCost;
-    }
-
     public List<ContractData> getActiveContracts() {
         return activeContracts;
+    }
+
+    public List<Integer> getProducersIds() {
+        return producersIds;
     }
 }

@@ -4,14 +4,19 @@ import java.util.List;
 
 public final class MonthlyUpdateData extends Data {
     private List<ConsumerData> newConsumers;
-    private List<CostChangeData> costsChanges;
+    private List<DistributorChangeData> distributorChanges;
+    private List<ProducerChangeData> producerChanges;
 
     public List<ConsumerData> getNewConsumers() {
         return newConsumers;
     }
 
-    public List<CostChangeData> getCostsChanges() {
-        return costsChanges;
+    public List<DistributorChangeData> getDistributorChanges() {
+        return distributorChanges;
+    }
+
+    public List<ProducerChangeData> getProducerChanges() {
+        return producerChanges;
     }
 
     public MonthlyUpdateData() {
@@ -22,7 +27,11 @@ public final class MonthlyUpdateData extends Data {
         this.newConsumers = newConsumers;
     }
 
-    public void setCostsChanges(final List<CostChangeData> costsChanges) {
-        this.costsChanges = costsChanges;
+    public void setDistributorChanges(final List<DistributorChangeData> distributorChanges) {
+        this.distributorChanges = distributorChanges;
+    }
+
+    public void setProducerChanges(List<ProducerChangeData> producerChanges) {
+        this.producerChanges = producerChanges;
     }
 }

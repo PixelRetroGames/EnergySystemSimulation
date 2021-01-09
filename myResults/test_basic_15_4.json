@@ -1,0 +1,69 @@
+{
+  "consumers" : [ {
+    "id" : 0,
+    "isBankrupt" : false,
+    "budget" : 174
+  }, {
+    "id" : 1,
+    "isBankrupt" : false,
+    "budget" : 160
+  }, {
+    "id" : 2,
+    "isBankrupt" : false,
+    "budget" : 396
+  }, {
+    "id" : 3,
+    "isBankrupt" : false,
+    "budget" : 302
+  }, {
+    "id" : 4,
+    "isBankrupt" : false,
+    "budget" : 177
+  }, {
+    "id" : 5,
+    "isBankrupt" : false,
+    "budget" : 188
+  } ],
+  "distributors" : [ {
+    "id" : 0,
+    "energyNeededKW" : 1930,
+    "contractCost" : 2,
+    "budget" : 261,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ {
+      "consumerId" : 0,
+      "price" : 24,
+      "remainedContractMonths" : -6
+    }, {
+      "consumerId" : 1,
+      "price" : 20,
+      "remainedContractMonths" : -5
+    }, {
+      "consumerId" : 2,
+      "price" : 12,
+      "remainedContractMonths" : -4
+    }, {
+      "consumerId" : 3,
+      "price" : 5,
+      "remainedContractMonths" : -3
+    }, {
+      "consumerId" : 4,
+      "price" : 4,
+      "remainedContractMonths" : -2
+    }, {
+      "consumerId" : 5,
+      "price" : 2,
+      "remainedContractMonths" : -1
+    } ],
+    "bankrupt" : false
+  } ],
+  "energyProducers" : [ {
+    "id" : 0,
+    "maxDistributors" : 10,
+    "priceKW" : 0,
+    "energyType" : "WIND",
+    "energyPerDistributor" : 2695,
+    "monthlyStats" : null
+  } ]
+}

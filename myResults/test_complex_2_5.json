@@ -1,0 +1,208 @@
+{
+  "consumers" : [ {
+    "id" : 0,
+    "isBankrupt" : false,
+    "budget" : 69
+  }, {
+    "id" : 1,
+    "isBankrupt" : false,
+    "budget" : 642
+  }, {
+    "id" : 2,
+    "isBankrupt" : false,
+    "budget" : 229
+  }, {
+    "id" : 3,
+    "isBankrupt" : false,
+    "budget" : 203
+  }, {
+    "id" : 4,
+    "isBankrupt" : false,
+    "budget" : 233
+  }, {
+    "id" : 5,
+    "isBankrupt" : false,
+    "budget" : 225
+  }, {
+    "id" : 6,
+    "isBankrupt" : false,
+    "budget" : 219
+  }, {
+    "id" : 7,
+    "isBankrupt" : false,
+    "budget" : 160
+  } ],
+  "distributors" : [ {
+    "id" : 0,
+    "energyNeededKW" : 1227,
+    "contractCost" : 16,
+    "budget" : 402,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 1,
+    "energyNeededKW" : 3139,
+    "contractCost" : 16,
+    "budget" : 1462,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 2,
+    "energyNeededKW" : 2146,
+    "contractCost" : 12,
+    "budget" : 951,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 3,
+    "energyNeededKW" : 4533,
+    "contractCost" : 14,
+    "budget" : 1211,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 4,
+    "energyNeededKW" : 1276,
+    "contractCost" : 1,
+    "budget" : 1723,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ {
+      "consumerId" : 0,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 1,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 2,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 3,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 4,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 7,
+      "price" : 1,
+      "remainedContractMonths" : 1
+    }, {
+      "consumerId" : 5,
+      "price" : 1,
+      "remainedContractMonths" : 2
+    }, {
+      "consumerId" : 6,
+      "price" : 1,
+      "remainedContractMonths" : 3
+    } ],
+    "bankrupt" : false
+  }, {
+    "id" : 5,
+    "energyNeededKW" : 3660,
+    "contractCost" : 16,
+    "budget" : 873,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 6,
+    "energyNeededKW" : 3264,
+    "contractCost" : 20,
+    "budget" : 787,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 7,
+    "energyNeededKW" : 1208,
+    "contractCost" : 24,
+    "budget" : 1673,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 8,
+    "energyNeededKW" : 4224,
+    "contractCost" : 15,
+    "budget" : 736,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 9,
+    "energyNeededKW" : 1462,
+    "contractCost" : 21,
+    "budget" : 1576,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  } ],
+  "energyProducers" : [ {
+    "id" : 0,
+    "maxDistributors" : 10,
+    "priceKW" : 0,
+    "energyType" : "SOLAR",
+    "energyPerDistributor" : 3845,
+    "monthlyStats" : null
+  }, {
+    "id" : 1,
+    "maxDistributors" : 9,
+    "priceKW" : 0,
+    "energyType" : "SOLAR",
+    "energyPerDistributor" : 2863,
+    "monthlyStats" : null
+  }, {
+    "id" : 2,
+    "maxDistributors" : 2,
+    "priceKW" : 0,
+    "energyType" : "HYDRO",
+    "energyPerDistributor" : 9096,
+    "monthlyStats" : null
+  }, {
+    "id" : 3,
+    "maxDistributors" : 4,
+    "priceKW" : 0,
+    "energyType" : "COAL",
+    "energyPerDistributor" : 8353,
+    "monthlyStats" : null
+  }, {
+    "id" : 4,
+    "maxDistributors" : 9,
+    "priceKW" : 0,
+    "energyType" : "HYDRO",
+    "energyPerDistributor" : 3369,
+    "monthlyStats" : null
+  }, {
+    "id" : 5,
+    "maxDistributors" : 2,
+    "priceKW" : 0,
+    "energyType" : "COAL",
+    "energyPerDistributor" : 4757,
+    "monthlyStats" : null
+  }, {
+    "id" : 6,
+    "maxDistributors" : 2,
+    "priceKW" : 0,
+    "energyType" : "WIND",
+    "energyPerDistributor" : 5728,
+    "monthlyStats" : null
+  } ]
+}

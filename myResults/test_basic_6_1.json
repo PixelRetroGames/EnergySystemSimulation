@@ -1,0 +1,43 @@
+{
+  "consumers" : [ {
+    "id" : 0,
+    "isBankrupt" : false,
+    "budget" : 360
+  } ],
+  "distributors" : [ {
+    "id" : 0,
+    "energyNeededKW" : 2200,
+    "contractCost" : 14,
+    "budget" : 146,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ {
+      "consumerId" : 0,
+      "price" : 14,
+      "remainedContractMonths" : -3
+    } ],
+    "bankrupt" : false
+  } ],
+  "energyProducers" : [ {
+    "id" : 0,
+    "maxDistributors" : 10,
+    "priceKW" : 0,
+    "energyType" : "COAL",
+    "energyPerDistributor" : 3695,
+    "monthlyStats" : null
+  }, {
+    "id" : 1,
+    "maxDistributors" : 10,
+    "priceKW" : 0,
+    "energyType" : "WIND",
+    "energyPerDistributor" : 3695,
+    "monthlyStats" : null
+  }, {
+    "id" : 2,
+    "maxDistributors" : 3,
+    "priceKW" : 0,
+    "energyType" : "NUCLEAR",
+    "energyPerDistributor" : 5583,
+    "monthlyStats" : null
+  } ]
+}

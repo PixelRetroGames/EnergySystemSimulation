@@ -1,9 +1,8 @@
 package ciolty.energySystemImplementation.entities;
 
-public final class CostChangeData {
+public final class DistributorChangeData {
     private int id;
     private int infrastructureCost;
-    private int productionCost;
 
     public int getId() {
         return id;
@@ -13,18 +12,12 @@ public final class CostChangeData {
         return infrastructureCost;
     }
 
-    public int getProductionCost() {
-        return productionCost;
-    }
-
-    public CostChangeData() {
+    public DistributorChangeData() {
         super();
     }
 
-    public CostChangeData(final int id, final int infrastructureCost,
-                          final int productionCost) {
+    public DistributorChangeData(final int id, final int infrastructureCost) {
         this.id = id;
         this.infrastructureCost = infrastructureCost;
-        this.productionCost = productionCost;
     }
 }

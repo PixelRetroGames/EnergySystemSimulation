@@ -1,16 +1,7 @@
 package ciolty.energySystemImplementation.server;
 
 import ciolty.energySystemImplementation.JSON.JsonOutputConverter;
-import ciolty.energySystemImplementation.actions.ConsumersChooseContractAction;
-import ciolty.energySystemImplementation.actions.ConsumersCleanContractsAction;
-import ciolty.energySystemImplementation.actions.ConsumersGetPaidAction;
-import ciolty.energySystemImplementation.actions.ConsumersPayDistributorsAction;
-import ciolty.energySystemImplementation.actions.DistributorSetPriceAction;
-import ciolty.energySystemImplementation.actions.DistributorsKickBankruptConsumersAction;
-import ciolty.energySystemImplementation.actions.DistributorsPayAction;
-import ciolty.energySystemImplementation.actions.DistributorsRemoveFinishedContractsAction;
-import ciolty.energySystemImplementation.actions.MonthEndedAction;
-import ciolty.energySystemImplementation.actions.MonthlyUpdateAction;
+import ciolty.energySystemImplementation.actions.*;
 import ciolty.energySystemImplementation.controllers.EnergySystemController;
 import ciolty.energySystemImplementation.debugger.DebuggingVariables;
 import ciolty.energySystemImplementation.entities.Data;
@@ -51,10 +42,14 @@ public final class EnergySystemServer extends ServerAbstract {
         Map.entry("distributors-kick-bankrupt-consumers",
                                                    DistributorsKickBankruptConsumersAction::new),
         Map.entry("consumers-clean-contracts",  ConsumersCleanContractsAction::new),
-        Map.entry("month-ended",         MonthEndedAction::new)));
+        Map.entry("month-ended",                MonthEndedAction::new),
+        Map.entry("producers-reset-price-changed", ProducersResetPriceChangedAction::new),
+        Map.entry("distributors-choose-producers", DistributorsChooseProducersAction::new)));
 
         monthlyActions = new ArrayList<String>();
         monthlyActions.addAll(Arrays.asList(
+                "distributors-choose-producers",
+                "producers-reset-price-changed",
                 "distributor-set-price",
                 "consumers-clean-contracts",
                 "distributors-remove-finished-contracts",
@@ -116,6 +111,7 @@ public final class EnergySystemServer extends ServerAbstract {
     private void populateOutput() {
         EnergySystemUnitOfWork energySystemUnitOfWork = (EnergySystemUnitOfWork) unitOfWork;
         output = new OutputData(energySystemUnitOfWork.getConsumerRepository().getAll(),
-                energySystemUnitOfWork.getDistributorRepository().getAll());
+                energySystemUnitOfWork.getDistributorRepository().getAll(),
+                energySystemUnitOfWork.getProducerRepository().getAll());
     }
 }

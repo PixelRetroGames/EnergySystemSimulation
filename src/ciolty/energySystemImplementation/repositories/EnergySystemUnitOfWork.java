@@ -3,6 +3,7 @@ package ciolty.energySystemImplementation.repositories;
 import ciolty.energySystemImplementation.entities.ConsumerData;
 import ciolty.energySystemImplementation.entities.DistributorData;
 import ciolty.energySystemImplementation.entities.InputData;
+import ciolty.energySystemImplementation.entities.ProducerData;
 import ciolty.energySystemImplementation.resourceManagers.ResourceManagerLinkedHashMap;
 import ciolty.engine.database.ResourceManager;
 import ciolty.engine.database.UnitOfWork;
@@ -11,6 +12,7 @@ import ciolty.engine.server.Input;
 public final class EnergySystemUnitOfWork implements UnitOfWork {
     private ConsumerRepository consumerRepository;
     private DistributorRepository distributorRepository;
+    private ProducerRepository producerRepository;
 
     private void populateConsumerRepository(final InputData inputData) {
         ResourceManager<ConsumerData> resourceManager = new ResourceManagerLinkedHashMap<>();
@@ -30,12 +32,22 @@ public final class EnergySystemUnitOfWork implements UnitOfWork {
         distributorRepository = new DistributorRepository(resourceManager);
     }
 
+    private void populateProducerRepository(final InputData inputData) {
+        ResourceManager<ProducerData> resourceManager = new ResourceManagerLinkedHashMap<ProducerData>();
+        for (ProducerData producerData : inputData.getProducers()) {
+            resourceManager.add(Integer.toString(producerData.getId()),
+                    new ProducerData(producerData));
+        }
+        producerRepository = new ProducerRepository(resourceManager);
+    }
+
     @Override
     public void populate(final Input input) {
         InputData inputData = (InputData) input;
 
         populateConsumerRepository(inputData);
         populateDistributorRepository(inputData);
+        populateProducerRepository(inputData);
     }
 
     public ConsumerRepository getConsumerRepository() {
@@ -46,6 +58,9 @@ public final class EnergySystemUnitOfWork implements UnitOfWork {
         return distributorRepository;
     }
 
+    public ProducerRepository getProducerRepository() {
+        return producerRepository;
+    }
     @Override
     public void terminate() { }
 }

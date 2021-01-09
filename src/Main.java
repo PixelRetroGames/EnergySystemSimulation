@@ -10,14 +10,20 @@ public final class Main {
     private Main() {
     }
 
-    static final int TEST_NUMBER_POSITION = 47;
     static final int FILE_EXTENSION_LENGTH = 5;
 
     private static String getTestNumber(final String path) {
         if (!DebuggingVariables.isDebuggingActive()) {
             return null;
         }
-        return path.substring(TEST_NUMBER_POSITION,
+
+        int pos = path.length() - 1;
+
+        while(path.charAt(pos) != '\\') {
+            pos--;
+        }
+
+        return path.substring(pos + 1,
                 path.length() - FILE_EXTENSION_LENGTH);
     }
 
@@ -32,9 +38,9 @@ public final class Main {
         String inputFilePath = args[0];
         String outputFilePath = args[1];
 
-        DebugLogger.deactivate();
+        DebugLogger.activate();
         DebugLogger.setPrintStream(System.out);
-        DebuggingVariables.setDebuggingActive(false);
+        DebuggingVariables.setDebuggingActive(true);
 
         InputReader reader = new InputReader(inputFilePath);
         InputData input = reader.read();

@@ -1,0 +1,332 @@
+{
+  "consumers" : [ {
+    "id" : 0,
+    "isBankrupt" : false,
+    "budget" : 1063
+  }, {
+    "id" : 1,
+    "isBankrupt" : false,
+    "budget" : 423
+  }, {
+    "id" : 2,
+    "isBankrupt" : false,
+    "budget" : 1565
+  }, {
+    "id" : 3,
+    "isBankrupt" : false,
+    "budget" : 341
+  }, {
+    "id" : 4,
+    "isBankrupt" : false,
+    "budget" : 504
+  }, {
+    "id" : 5,
+    "isBankrupt" : false,
+    "budget" : 587
+  }, {
+    "id" : 6,
+    "isBankrupt" : false,
+    "budget" : 1193
+  }, {
+    "id" : 7,
+    "isBankrupt" : false,
+    "budget" : 367
+  }, {
+    "id" : 8,
+    "isBankrupt" : false,
+    "budget" : 199
+  }, {
+    "id" : 9,
+    "isBankrupt" : false,
+    "budget" : 229
+  }, {
+    "id" : 10,
+    "isBankrupt" : false,
+    "budget" : 338
+  }, {
+    "id" : 11,
+    "isBankrupt" : false,
+    "budget" : 184
+  }, {
+    "id" : 12,
+    "isBankrupt" : false,
+    "budget" : 89
+  }, {
+    "id" : 13,
+    "isBankrupt" : false,
+    "budget" : 283
+  } ],
+  "distributors" : [ {
+    "id" : 0,
+    "energyNeededKW" : 2334,
+    "contractCost" : 11,
+    "budget" : 1697,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 1,
+    "energyNeededKW" : 1015,
+    "contractCost" : 0,
+    "budget" : 643,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ {
+      "consumerId" : 0,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 1,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 2,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 3,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 4,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 5,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 6,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 7,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 8,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 9,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 10,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 11,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 12,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    }, {
+      "consumerId" : 13,
+      "price" : 0,
+      "remainedContractMonths" : 0
+    } ],
+    "bankrupt" : false
+  }, {
+    "id" : 2,
+    "energyNeededKW" : 3482,
+    "contractCost" : 30,
+    "budget" : 1336,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 3,
+    "energyNeededKW" : 3388,
+    "contractCost" : 29,
+    "budget" : 1392,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 4,
+    "energyNeededKW" : 2266,
+    "contractCost" : 21,
+    "budget" : 395,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 5,
+    "energyNeededKW" : 1253,
+    "contractCost" : 15,
+    "budget" : 1631,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 6,
+    "energyNeededKW" : 3974,
+    "contractCost" : 17,
+    "budget" : 1426,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 7,
+    "energyNeededKW" : 2783,
+    "contractCost" : 25,
+    "budget" : 611,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 8,
+    "energyNeededKW" : 1442,
+    "contractCost" : 28,
+    "budget" : 1201,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 9,
+    "energyNeededKW" : 2268,
+    "contractCost" : 29,
+    "budget" : 1185,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 10,
+    "energyNeededKW" : 2641,
+    "contractCost" : 22,
+    "budget" : 326,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 11,
+    "energyNeededKW" : 1473,
+    "contractCost" : 20,
+    "budget" : 323,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 12,
+    "energyNeededKW" : 3965,
+    "contractCost" : 18,
+    "budget" : 1601,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 13,
+    "energyNeededKW" : 4231,
+    "contractCost" : 30,
+    "budget" : 540,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 14,
+    "energyNeededKW" : 4461,
+    "contractCost" : 18,
+    "budget" : 656,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 15,
+    "energyNeededKW" : 2079,
+    "contractCost" : 13,
+    "budget" : 245,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 16,
+    "energyNeededKW" : 3076,
+    "contractCost" : 15,
+    "budget" : 544,
+    "producerStrategy" : "PRICE",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 17,
+    "energyNeededKW" : 3110,
+    "contractCost" : 30,
+    "budget" : 1541,
+    "producerStrategy" : "GREEN",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 18,
+    "energyNeededKW" : 4957,
+    "contractCost" : 10,
+    "budget" : 947,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  }, {
+    "id" : 19,
+    "energyNeededKW" : 3828,
+    "contractCost" : 10,
+    "budget" : 1118,
+    "producerStrategy" : "QUANTITY",
+    "isBankrupt" : false,
+    "contracts" : [ ],
+    "bankrupt" : false
+  } ],
+  "energyProducers" : [ {
+    "id" : 0,
+    "maxDistributors" : 10,
+    "priceKW" : 0,
+    "energyType" : "NUCLEAR",
+    "energyPerDistributor" : 2577,
+    "monthlyStats" : null
+  }, {
+    "id" : 1,
+    "maxDistributors" : 4,
+    "priceKW" : 0,
+    "energyType" : "COAL",
+    "energyPerDistributor" : 3838,
+    "monthlyStats" : null
+  }, {
+    "id" : 2,
+    "maxDistributors" : 6,
+    "priceKW" : 0,
+    "energyType" : "HYDRO",
+    "energyPerDistributor" : 9608,
+    "monthlyStats" : null
+  }, {
+    "id" : 3,
+    "maxDistributors" : 4,
+    "priceKW" : 0,
+    "energyType" : "COAL",
+    "energyPerDistributor" : 3258,
+    "monthlyStats" : null
+  }, {
+    "id" : 4,
+    "maxDistributors" : 7,
+    "priceKW" : 0,
+    "energyType" : "SOLAR",
+    "energyPerDistributor" : 8619,
+    "monthlyStats" : null
+  } ]
+}

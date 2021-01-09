@@ -40,6 +40,10 @@ public final class InputData implements Input {
         return initialData.distributors;
     }
 
+    public List<ProducerData> getProducers() {
+        return initialData.getProducers();
+    }
+
     public int getNumberOfTurns() {
         return numberOfTurns;
     }
@@ -55,6 +59,7 @@ public final class InputData implements Input {
     public final class InitialData {
         private List<ConsumerData> consumers;
         private List<DistributorData> distributors;
+        private List<ProducerData> producers;
 
         public List<ConsumerData> getConsumers() {
             return consumers;
@@ -64,12 +69,20 @@ public final class InputData implements Input {
             return distributors;
         }
 
+        public List<ProducerData> getProducers() {
+            return producers;
+        }
+
         public void setConsumers(final List<ConsumerData> consumers) {
             this.consumers = consumers;
         }
 
         public void setDistributors(final List<DistributorData> distributors) {
             this.distributors = distributors;
+        }
+
+        public void setProducers(List<ProducerData> producers) {
+            this.producers = producers;
         }
     }
 }
