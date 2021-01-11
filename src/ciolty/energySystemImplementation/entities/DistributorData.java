@@ -16,6 +16,7 @@ public final class DistributorData {
     private boolean isBankrupt;
     private final List<ContractData> activeContracts = new ArrayList<>();
     private List<Integer> producersIds = new ArrayList<>();
+    private boolean changedProducers;
 
     public void setInitialInfrastructureCost(final int initialInfrastructureCost) {
         infrastructureCost = initialInfrastructureCost;
@@ -91,7 +92,7 @@ public final class DistributorData {
 
     public DistributorData(DistributorData data) {
         id = data.getId();
-        contractLength = data.getId();
+        contractLength = data.getContractLength();
         budget = data.getBudget();
         infrastructureCost = data.getInfrastructureCost();
         energyNeededKW = data.getEnergyNeededKW();
@@ -120,5 +121,13 @@ public final class DistributorData {
 
     public List<Integer> getProducersIds() {
         return producersIds;
+    }
+
+    public boolean getChangedProducers() {
+        return changedProducers;
+    }
+
+    public void setChangedProducers(boolean changedProducers) {
+        this.changedProducers = changedProducers;
     }
 }

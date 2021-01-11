@@ -1,6 +1,6 @@
 package ciolty.energySystemImplementation.entities;
 
-public class ProducerChangeData {
+public final class ProducerChangeData {
     private int id;
     private int energyPerDistributor;
 

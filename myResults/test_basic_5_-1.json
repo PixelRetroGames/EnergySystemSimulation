@@ -2,42 +2,41 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 208
+    "budget" : 204
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 2200,
-    "contractCost" : 14,
+    "contractCost" : 18,
     "budget" : 146,
     "producerStrategy" : "PRICE",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 14,
-      "remainedContractMonths" : -1
-    } ],
-    "bankrupt" : false
+      "price" : 18,
+      "remainedContractMonths" : 5
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.05,
     "energyType" : "WIND",
     "energyPerDistributor" : 2695,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   }, {
     "id" : 1,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "COAL",
     "energyPerDistributor" : 4695,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   }, {
     "id" : 2,
     "maxDistributors" : 3,
-    "priceKW" : 0,
+    "priceKW" : 0.02,
     "energyType" : "WIND",
     "energyPerDistributor" : 2583,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   } ]
 }

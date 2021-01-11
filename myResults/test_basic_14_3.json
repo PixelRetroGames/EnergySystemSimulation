@@ -2,66 +2,101 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 170
+    "budget" : 30
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 156
+    "budget" : 44
   }, {
     "id" : 2,
     "isBankrupt" : false,
-    "budget" : 311
+    "budget" : 227
   }, {
     "id" : 3,
     "isBankrupt" : false,
-    "budget" : 264
+    "budget" : 260
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 2000,
-    "contractCost" : 4,
-    "budget" : 203,
+    "contractCost" : 17,
+    "budget" : 347,
     "producerStrategy" : "QUANTITY",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 24,
-      "remainedContractMonths" : -5
+      "price" : 52,
+      "remainedContractMonths" : 1
     }, {
       "consumerId" : 1,
-      "price" : 20,
-      "remainedContractMonths" : -4
+      "price" : 48,
+      "remainedContractMonths" : 2
     }, {
       "consumerId" : 2,
-      "price" : 12,
-      "remainedContractMonths" : -3
+      "price" : 40,
+      "remainedContractMonths" : 3
     }, {
       "consumerId" : 3,
-      "price" : 5,
-      "remainedContractMonths" : -2
-    } ],
-    "bankrupt" : false
+      "price" : 7,
+      "remainedContractMonths" : 4
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "WIND",
-    "energyPerDistributor" : 2700,
-    "monthlyStats" : null
+    "energyPerDistributor" : 1077,
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 3,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 4,
+      "distributorsIds" : [ ]
+    } ]
   }, {
     "id" : 1,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.05,
     "energyType" : "SOLAR",
     "energyPerDistributor" : 2300,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 3,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 4,
+      "distributorsIds" : [ 0 ]
+    } ]
   }, {
     "id" : 2,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.08,
     "energyType" : "COAL",
-    "energyPerDistributor" : 3000,
-    "monthlyStats" : null
+    "energyPerDistributor" : 2200,
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 3,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 4,
+      "distributorsIds" : [ ]
+    } ]
   } ]
 }

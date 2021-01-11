@@ -1,7 +1,10 @@
 package ciolty.energySystemImplementation.actions;
 
 import ciolty.energySystemImplementation.debugger.DebugLogger;
-import ciolty.energySystemImplementation.entities.*;
+import ciolty.energySystemImplementation.entities.ConsumerData;
+import ciolty.energySystemImplementation.entities.DistributorChangeData;
+import ciolty.energySystemImplementation.entities.DistributorData;
+import ciolty.energySystemImplementation.entities.MonthlyUpdateData;
 
 import java.util.List;
 
@@ -34,15 +37,6 @@ public final class MonthlyUpdateAction extends ImplementedAction {
             DistributorData distributor = getUnitOfWork().getDistributorRepository()
                     .get(Integer.toString(costChange.getId()));
             distributor.setInfrastructureCost(costChange.getInfrastructureCost());
-        }
-    }
-
-    private void changeCostsProducers(final List<ProducerChangeData> costsChanges) {
-        for (ProducerChangeData costChange : costsChanges) {
-            ProducerData producer = getUnitOfWork().getProducerRepository()
-                    .get(Integer.toString(costChange.getId()));
-            producer.setEnergyPerDistributor(costChange.getEnergyPerDistributor());
-            producer.setPriceChanged(true);
         }
     }
 }

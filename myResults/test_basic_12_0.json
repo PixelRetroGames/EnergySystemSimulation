@@ -2,50 +2,58 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 158
+    "budget" : 154
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 144
+    "budget" : 142
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 1930,
-    "contractCost" : 20,
+    "contractCost" : 22,
     "budget" : 84,
     "producerStrategy" : "GREEN",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 24,
-      "remainedContractMonths" : -2
+      "price" : 26,
+      "remainedContractMonths" : 4
     }, {
       "consumerId" : 1,
-      "price" : 20,
-      "remainedContractMonths" : -1
-    } ],
-    "bankrupt" : false
+      "price" : 22,
+      "remainedContractMonths" : 5
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "WIND",
     "energyPerDistributor" : 2695,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ 0 ]
+    } ]
   }, {
     "id" : 1,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.05,
     "energyType" : "SOLAR",
     "energyPerDistributor" : 2300,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    } ]
   }, {
     "id" : 2,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.08,
     "energyType" : "NUCLEAR",
     "energyPerDistributor" : 4000,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    } ]
   } ]
 }

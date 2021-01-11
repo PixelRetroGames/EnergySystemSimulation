@@ -2,86 +2,81 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 99
+    "budget" : 57
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 175
+    "budget" : 133
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 3960,
-    "contractCost" : 25,
+    "contractCost" : 67,
     "budget" : 1394,
     "producerStrategy" : "GREEN",
     "isBankrupt" : false,
-    "contracts" : [ ],
-    "bankrupt" : false
+    "contracts" : [ ]
   }, {
     "id" : 1,
     "energyNeededKW" : 4816,
-    "contractCost" : 21,
+    "contractCost" : 63,
     "budget" : 921,
     "producerStrategy" : "PRICE",
     "isBankrupt" : false,
-    "contracts" : [ ],
-    "bankrupt" : false
+    "contracts" : [ ]
   }, {
     "id" : 2,
     "energyNeededKW" : 3862,
-    "contractCost" : 18,
+    "contractCost" : 60,
     "budget" : 1120,
     "producerStrategy" : "GREEN",
     "isBankrupt" : false,
-    "contracts" : [ ],
-    "bankrupt" : false
+    "contracts" : [ ]
   }, {
     "id" : 3,
     "energyNeededKW" : 2127,
-    "contractCost" : 13,
-    "budget" : 542,
+    "contractCost" : 55,
+    "budget" : 556,
     "producerStrategy" : "PRICE",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 13,
-      "remainedContractMonths" : 2
+      "price" : 55,
+      "remainedContractMonths" : 7
     }, {
       "consumerId" : 1,
-      "price" : 13,
-      "remainedContractMonths" : 2
-    } ],
-    "bankrupt" : false
+      "price" : 55,
+      "remainedContractMonths" : 7
+    } ]
   }, {
     "id" : 4,
     "energyNeededKW" : 4413,
-    "contractCost" : 23,
+    "contractCost" : 127,
     "budget" : 1726,
     "producerStrategy" : "QUANTITY",
     "isBankrupt" : false,
-    "contracts" : [ ],
-    "bankrupt" : false
+    "contracts" : [ ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 8,
-    "priceKW" : 0,
+    "priceKW" : 0.09,
     "energyType" : "NUCLEAR",
     "energyPerDistributor" : 9735,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   }, {
     "id" : 1,
     "maxDistributors" : 6,
-    "priceKW" : 0,
+    "priceKW" : 0.06,
     "energyType" : "WIND",
     "energyPerDistributor" : 9277,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   }, {
     "id" : 2,
     "maxDistributors" : 9,
-    "priceKW" : 0,
+    "priceKW" : 0.04,
     "energyType" : "HYDRO",
     "energyPerDistributor" : 8760,
-    "monthlyStats" : null
+    "monthlyStats" : [ ]
   } ]
 }

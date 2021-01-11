@@ -96,10 +96,6 @@ public final class OutputData implements Output {
             return producerStrategy;
         }
 
-        public boolean isBankrupt() {
-            return isBankrupt;
-        }
-
         DistributorOutputData(final DistributorData data) {
             id = data.getId();
             budget = data.getBudget();
@@ -140,10 +136,10 @@ public final class OutputData implements Output {
     private static class ProducerOutputData {
         private final int id;
         private final int maxDistributors;
-        private final int priceKW;
+        private final double priceKW;
         private final String energyType;
         private final int energyPerDistributor;
-        private final List<MonthlyStat> monthlyStats;
+        private final List<MonthlyStat> monthlyStats = new ArrayList<>();
 
         public int getId() {
             return id;
@@ -153,7 +149,7 @@ public final class OutputData implements Output {
             return maxDistributors;
         }
 
-        public int getPriceKW() {
+        public double getPriceKW() {
             return priceKW;
         }
 
@@ -169,14 +165,16 @@ public final class OutputData implements Output {
             return monthlyStats;
         }
 
-        public ProducerOutputData(final ProducerData data) {
+        ProducerOutputData(final ProducerData data) {
             id = data.getId();
             maxDistributors = data.getMaxDistributors();
             priceKW = data.getPriceKW();
             energyType = data.getEnergyType();
             energyPerDistributor = data.getEnergyPerDistributor();
-            monthlyStats = null;
-            // monthlyStats = data.getMonthly;
+            for (int month = 1; month < data.getAllTimeRegisteredDistributors().size(); month++) {
+                monthlyStats.add(new MonthlyStat(month,
+                        data.getAllTimeRegisteredDistributors().get(month)));
+            }
         }
 
         private static class MonthlyStat {
@@ -191,7 +189,7 @@ public final class OutputData implements Output {
                 return distributorsIds;
             }
 
-            public MonthlyStat(int month, List<Integer> distributorsIds) {
+            MonthlyStat(int month, List<Integer> distributorsIds) {
                 this.month = month;
                 this.distributorsIds = distributorsIds;
             }

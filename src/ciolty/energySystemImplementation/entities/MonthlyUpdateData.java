@@ -23,6 +23,20 @@ public final class MonthlyUpdateData extends Data {
         super("monthly-update");
     }
 
+    public MonthlyUpdateData(String actionType) {
+        super(actionType);
+    }
+
+    public MonthlyUpdateData(MonthlyUpdateData other, String actionType) {
+        super(actionType);
+        if (other == null) {
+            return;
+        }
+        newConsumers = other.newConsumers;
+        distributorChanges = other.distributorChanges;
+        producerChanges = other.producerChanges;
+    }
+
     public void setNewConsumers(final List<ConsumerData> newConsumers) {
         this.newConsumers = newConsumers;
     }

@@ -2,58 +2,75 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 162
+    "budget" : 156
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 148
+    "budget" : 144
   }, {
     "id" : 2,
     "isBankrupt" : false,
-    "budget" : 141
+    "budget" : 139
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 2530,
-    "contractCost" : 12,
+    "contractCost" : 14,
     "budget" : 115,
     "producerStrategy" : "PRICE",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 24,
-      "remainedContractMonths" : -3
+      "price" : 26,
+      "remainedContractMonths" : 3
     }, {
       "consumerId" : 1,
-      "price" : 20,
-      "remainedContractMonths" : -2
+      "price" : 22,
+      "remainedContractMonths" : 4
     }, {
       "consumerId" : 2,
-      "price" : 12,
-      "remainedContractMonths" : -1
-    } ],
-    "bankrupt" : false
+      "price" : 14,
+      "remainedContractMonths" : 5
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "WIND",
-    "energyPerDistributor" : 2695,
-    "monthlyStats" : null
+    "energyPerDistributor" : 1319,
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ 0 ]
+    } ]
   }, {
     "id" : 1,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.05,
     "energyType" : "SOLAR",
     "energyPerDistributor" : 2300,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ ]
+    } ]
   }, {
     "id" : 2,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.03,
     "energyType" : "HYDRO",
     "energyPerDistributor" : 4000,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ 0 ]
+    } ]
   } ]
 }

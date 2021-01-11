@@ -2,60 +2,71 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 170
+    "budget" : 160
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 156
+    "budget" : 148
   }, {
     "id" : 2,
     "isBankrupt" : false,
-    "budget" : 311
+    "budget" : 290
   }, {
     "id" : 3,
     "isBankrupt" : false,
-    "budget" : 264
+    "budget" : 256
   }, {
     "id" : 4,
     "isBankrupt" : false,
-    "budget" : 116
+    "budget" : 106
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 1930,
-    "contractCost" : 4,
-    "budget" : 207,
+    "contractCost" : 14,
+    "budget" : 179,
     "producerStrategy" : "GREEN",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 24,
-      "remainedContractMonths" : -5
+      "price" : 26,
+      "remainedContractMonths" : 1
     }, {
       "consumerId" : 1,
-      "price" : 20,
-      "remainedContractMonths" : -4
+      "price" : 22,
+      "remainedContractMonths" : 2
     }, {
       "consumerId" : 2,
-      "price" : 12,
-      "remainedContractMonths" : -3
+      "price" : 19,
+      "remainedContractMonths" : 3
     }, {
       "consumerId" : 3,
-      "price" : 5,
-      "remainedContractMonths" : -2
+      "price" : 9,
+      "remainedContractMonths" : 4
     }, {
       "consumerId" : 4,
-      "price" : 4,
-      "remainedContractMonths" : -1
-    } ],
-    "bankrupt" : false
+      "price" : 14,
+      "remainedContractMonths" : 5
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "WIND",
-    "energyPerDistributor" : 2695,
-    "monthlyStats" : null
+    "energyPerDistributor" : 2569,
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 3,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 4,
+      "distributorsIds" : [ 0 ]
+    } ]
   } ]
 }

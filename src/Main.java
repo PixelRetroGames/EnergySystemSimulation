@@ -19,7 +19,7 @@ public final class Main {
 
         int pos = path.length() - 1;
 
-        while(path.charAt(pos) != '\\') {
+        while (path.charAt(pos) != '\\') {
             pos--;
         }
 

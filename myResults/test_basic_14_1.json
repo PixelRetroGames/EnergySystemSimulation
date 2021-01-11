@@ -2,58 +2,75 @@
   "consumers" : [ {
     "id" : 0,
     "isBankrupt" : false,
-    "budget" : 162
+    "budget" : 78
   }, {
     "id" : 1,
     "isBankrupt" : false,
-    "budget" : 148
+    "budget" : 92
   }, {
     "id" : 2,
     "isBankrupt" : false,
-    "budget" : 141
+    "budget" : 113
   } ],
   "distributors" : [ {
     "id" : 0,
     "energyNeededKW" : 2000,
-    "contractCost" : 12,
-    "budget" : 115,
+    "contractCost" : 40,
+    "budget" : 139,
     "producerStrategy" : "QUANTITY",
     "isBankrupt" : false,
     "contracts" : [ {
       "consumerId" : 0,
-      "price" : 24,
-      "remainedContractMonths" : -3
+      "price" : 52,
+      "remainedContractMonths" : 3
     }, {
       "consumerId" : 1,
-      "price" : 20,
-      "remainedContractMonths" : -2
+      "price" : 48,
+      "remainedContractMonths" : 4
     }, {
       "consumerId" : 2,
-      "price" : 12,
-      "remainedContractMonths" : -1
-    } ],
-    "bankrupt" : false
+      "price" : 40,
+      "remainedContractMonths" : 5
+    } ]
   } ],
   "energyProducers" : [ {
     "id" : 0,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.01,
     "energyType" : "WIND",
     "energyPerDistributor" : 2700,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ 0 ]
+    } ]
   }, {
     "id" : 1,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.05,
     "energyType" : "SOLAR",
     "energyPerDistributor" : 2300,
-    "monthlyStats" : null
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ ]
+    } ]
   }, {
     "id" : 2,
     "maxDistributors" : 10,
-    "priceKW" : 0,
+    "priceKW" : 0.08,
     "energyType" : "COAL",
-    "energyPerDistributor" : 3000,
-    "monthlyStats" : null
+    "energyPerDistributor" : 2200,
+    "monthlyStats" : [ {
+      "month" : 1,
+      "distributorsIds" : [ 0 ]
+    }, {
+      "month" : 2,
+      "distributorsIds" : [ ]
+    } ]
   } ]
 }

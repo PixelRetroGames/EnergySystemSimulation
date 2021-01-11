@@ -1,11 +1,23 @@
 package ciolty.energySystemImplementation.server;
 
 import ciolty.energySystemImplementation.JSON.JsonOutputConverter;
-import ciolty.energySystemImplementation.actions.*;
+import ciolty.energySystemImplementation.actions.ConsumersChooseContractAction;
+import ciolty.energySystemImplementation.actions.ConsumersCleanContractsAction;
+import ciolty.energySystemImplementation.actions.ConsumersGetPaidAction;
+import ciolty.energySystemImplementation.actions.ConsumersPayDistributorsAction;
+import ciolty.energySystemImplementation.actions.DistributorSetPriceAction;
+import ciolty.energySystemImplementation.actions.DistributorsChooseProducersAction;
+import ciolty.energySystemImplementation.actions.DistributorsKickBankruptConsumersAction;
+import ciolty.energySystemImplementation.actions.DistributorsPayAction;
+import ciolty.energySystemImplementation.actions.DistributorsRemoveFinishedContractsAction;
+import ciolty.energySystemImplementation.actions.MonthEndedAction;
+import ciolty.energySystemImplementation.actions.MonthlyProducersUpdateAction;
+import ciolty.energySystemImplementation.actions.MonthlyUpdateAction;
 import ciolty.energySystemImplementation.controllers.EnergySystemController;
 import ciolty.energySystemImplementation.debugger.DebuggingVariables;
 import ciolty.energySystemImplementation.entities.Data;
 import ciolty.energySystemImplementation.entities.InputData;
+import ciolty.energySystemImplementation.entities.MonthlyUpdateData;
 import ciolty.energySystemImplementation.entities.OutputData;
 import ciolty.energySystemImplementation.repositories.EnergySystemUnitOfWork;
 import ciolty.engine.JSON.Writer;
@@ -23,6 +35,7 @@ public final class EnergySystemServer extends ServerAbstract {
     private int currentRound = -1;
     private final String debugPath;
     private final List<String> monthlyActions;
+    private final List<String> initialRoundActions;
 
     public EnergySystemServer(final InputData input, final String debugPath) {
         this.input = input;
@@ -43,16 +56,27 @@ public final class EnergySystemServer extends ServerAbstract {
                                                    DistributorsKickBankruptConsumersAction::new),
         Map.entry("consumers-clean-contracts",  ConsumersCleanContractsAction::new),
         Map.entry("month-ended",                MonthEndedAction::new),
-        Map.entry("producers-reset-price-changed", ProducersResetPriceChangedAction::new),
-        Map.entry("distributors-choose-producers", DistributorsChooseProducersAction::new)));
+        Map.entry("distributors-choose-producers", DistributorsChooseProducersAction::new),
+        Map.entry("monthly-producers-update",   MonthlyProducersUpdateAction::new)));
 
         monthlyActions = new ArrayList<String>();
         monthlyActions.addAll(Arrays.asList(
-                "distributors-choose-producers",
-                "producers-reset-price-changed",
                 "distributor-set-price",
                 "consumers-clean-contracts",
                 "distributors-remove-finished-contracts",
+                "consumers-choose-contract",
+                "consumers-get-paid",
+                "consumers-pay-distributors",
+                "distributors-pay-action",
+                "distributors-kick-bankrupt-consumers",
+                "monthly-producers-update",
+                "distributors-choose-producers",
+                "month-ended"));
+
+        initialRoundActions = new ArrayList<String>();
+        initialRoundActions.addAll(Arrays.asList(
+                "distributors-choose-producers",
+                "distributor-set-price",
                 "consumers-choose-contract",
                 "consumers-get-paid",
                 "consumers-pay-distributors",
@@ -79,23 +103,26 @@ public final class EnergySystemServer extends ServerAbstract {
     }
 
     private void runInitialRound() {
-        runMonthlyActions();
+        initialRoundActions.forEach(action -> {
+            ActionData actionData = new Data(action);
+            actionController.execute(actionData);
+        });
         print();
         currentRound++;
     }
 
-    private void runMonthlyActions() {
+    private void runMonthlyActions(MonthlyUpdateData monthlyUpdateData) {
         monthlyActions.forEach(action -> {
-            ActionData actionData = new Data(action);
+            ActionData actionData = new MonthlyUpdateData(monthlyUpdateData, action);
             actionController.execute(actionData);
         });
     }
 
     private void runAction(final int position) {
-        ActionData actionData = input.getMonthlyUpdates().get(position);
+        MonthlyUpdateData actionData = input.getMonthlyUpdates().get(position);
         actionController.execute(actionData);
 
-        runMonthlyActions();
+        runMonthlyActions(actionData);
         print();
         currentRound++;
     }

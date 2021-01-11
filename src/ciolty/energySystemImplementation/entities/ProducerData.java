@@ -1,17 +1,17 @@
 package ciolty.energySystemImplementation.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ProducerData {
+public final class ProducerData {
     private int id;
     private String energyType;
     private int maxDistributors;
-    private int priceKW;
+    private double priceKW;
     private int energyPerDistributor;
 
-    private boolean priceChanged;
-    private List<Integer> registeredDistributors;
-    private List<List<Integer>> allTimeRegisteredDistributors;
+    private final List<Integer> registeredDistributors = new ArrayList<>();
+    private final List<List<Integer>> allTimeRegisteredDistributors = new ArrayList<>();
 
     public ProducerData() {
     }
@@ -48,11 +48,11 @@ public class ProducerData {
         this.maxDistributors = maxDistributors;
     }
 
-    public int getPriceKW() {
+    public double getPriceKW() {
         return priceKW;
     }
 
-    public void setPriceKW(int priceKW) {
+    public void setPriceKW(double priceKW) {
         this.priceKW = priceKW;
     }
 
@@ -64,27 +64,11 @@ public class ProducerData {
         this.energyPerDistributor = energyPerDistributor;
     }
 
-    public boolean isPriceChanged() {
-        return priceChanged;
-    }
-
-    public void setPriceChanged(boolean priceChanged) {
-        this.priceChanged = priceChanged;
-    }
-
     public List<Integer> getRegisteredDistributors() {
         return registeredDistributors;
     }
 
-    public void setRegisteredDistributors(List<Integer> registeredDistributors) {
-        this.registeredDistributors = registeredDistributors;
-    }
-
     public List<List<Integer>> getAllTimeRegisteredDistributors() {
         return allTimeRegisteredDistributors;
-    }
-
-    public void setAllTimeRegisteredDistributors(List<List<Integer>> allTimeRegisteredDistributors) {
-        this.allTimeRegisteredDistributors = allTimeRegisteredDistributors;
     }
 }

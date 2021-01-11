@@ -33,7 +33,7 @@ public final class EnergySystemUnitOfWork implements UnitOfWork {
     }
 
     private void populateProducerRepository(final InputData inputData) {
-        ResourceManager<ProducerData> resourceManager = new ResourceManagerLinkedHashMap<ProducerData>();
+        ResourceManager<ProducerData> resourceManager = new ResourceManagerLinkedHashMap<>();
         for (ProducerData producerData : inputData.getProducers()) {
             resourceManager.add(Integer.toString(producerData.getId()),
                     new ProducerData(producerData));
