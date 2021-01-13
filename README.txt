@@ -1,5 +1,5 @@
 Cioltan Marian Alexandru 321CA
-Proiect POO 2020 - etapa 1
+Proiect POO 2020
 https://github.com/PixelRetroGames/EnergySystemSimulation
 
 ## Etapa 2
