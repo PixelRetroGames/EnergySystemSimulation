@@ -113,7 +113,7 @@ public final class Test {
 
     private static final File CONFIG_FILE = new File(CHECKER_RESOURCES_FOLDER + "config.json");
 
-    private static final int MAX_MILLISECONDS_PER_TEST = 1000000000;
+    private static final int MAX_MILLISECONDS_PER_TEST = 1000;
 
     private static int score = 0;
     private static int totalScore = 0;
@@ -180,10 +180,6 @@ public final class Test {
             final Future<Object> task
     ) {
         ObjectMapper objectMapper = new ObjectMapper();
-        /*if (testFileName.compareTo("complex_2.json") != 0) {
-            return;
-        }
-        System.out.println(testFileName);*/
         File refFile = new File(CHECKER_RESOURCES_FOLDER + REF_FOLDER + testFileName);
 
         try {

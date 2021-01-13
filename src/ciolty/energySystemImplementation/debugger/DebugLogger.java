@@ -1,8 +1,10 @@
 package ciolty.energySystemImplementation.debugger;
 
 import java.io.PrintStream;
+import java.util.Observable;
+import java.util.Observer;
 
-public final class DebugLogger {
+public final class DebugLogger implements Observer {
     private boolean active = false;
     private PrintStream out = null;
     private static DebugLogger instance = null;
@@ -10,25 +12,18 @@ public final class DebugLogger {
     private DebugLogger() {
     }
 
-    private static DebugLogger getInstance() {
+    /**
+     * @return instance
+     */
+    public static DebugLogger getInstance() {
         if (instance == null) {
             instance = new DebugLogger();
         }
         return instance;
     }
 
-    /**
-     * Activate logging
-     */
-    public static void activate() {
-        getInstance().active = true;
-    }
-
-    /**
-     * Deactivate logging
-     */
-    public static void deactivate() {
-        getInstance().active = false;
+    private static void setActive(boolean active) {
+        getInstance().active = active;
     }
 
     /**
@@ -45,5 +40,10 @@ public final class DebugLogger {
         if (getInstance().active && getInstance().out != null) {
             getInstance().out.println(message);
         }
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        setActive((boolean) arg);
     }
 }

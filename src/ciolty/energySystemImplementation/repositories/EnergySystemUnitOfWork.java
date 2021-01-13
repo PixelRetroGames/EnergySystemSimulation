@@ -61,6 +61,7 @@ public final class EnergySystemUnitOfWork implements UnitOfWork {
     public ProducerRepository getProducerRepository() {
         return producerRepository;
     }
+
     @Override
     public void terminate() { }
 }

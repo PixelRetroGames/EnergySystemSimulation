@@ -35,12 +35,11 @@ public final class Main {
      * @param args
      */
     public static void main(final String[] args) {
+        DebugLogger.setPrintStream(System.out);
+        DebuggingVariables.setDebuggingActive(false);
+
         String inputFilePath = args[0];
         String outputFilePath = args[1];
-
-        DebugLogger.activate();
-        DebugLogger.setPrintStream(System.out);
-        DebuggingVariables.setDebuggingActive(true);
 
         InputReader reader = new InputReader(inputFilePath);
         InputData input = reader.read();

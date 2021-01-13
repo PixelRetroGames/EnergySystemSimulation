@@ -1,5 +1,6 @@
 package ciolty.energySystemImplementation.actions;
 
+import ciolty.energySystemImplementation.debugger.DebugLogger;
 import ciolty.energySystemImplementation.entities.MonthlyUpdateData;
 import ciolty.energySystemImplementation.entities.ProducerChangeData;
 import ciolty.energySystemImplementation.entities.ProducerData;
@@ -21,6 +22,7 @@ public final class MonthlyProducersUpdateAction extends ImplementedAction {
 
     @Override
     public String execute() {
+        DebugLogger.log("Monthly producers updated!");
         List<ProducerChangeData> costsChanges = data.getProducerChanges();
         for (ProducerChangeData costChange : costsChanges) {
             ProducerData producer = getUnitOfWork().getProducerRepository()

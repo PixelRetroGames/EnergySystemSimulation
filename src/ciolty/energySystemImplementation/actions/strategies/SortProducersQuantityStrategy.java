@@ -14,9 +14,11 @@ public final class SortProducersQuantityStrategy implements SortProducersStrateg
         producersSorted.addAll(producers);
         producersSorted.sort((o1, o2) -> {
             if (o1.getEnergyPerDistributor() == o2.getEnergyPerDistributor()) {
-                return o1.getId() - o2.getId();
+                return Integer.compare(o1.getId(),
+                        o2.getId());
             }
-            return -o1.getEnergyPerDistributor() + o2.getEnergyPerDistributor();
+            return Integer.compare(o2.getEnergyPerDistributor(),
+                    o1.getEnergyPerDistributor());
         });
         return producersSorted;
     }

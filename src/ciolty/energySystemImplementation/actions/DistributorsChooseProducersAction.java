@@ -41,7 +41,6 @@ public final class DistributorsChooseProducersAction extends ImplementedAction {
 
     private void removeDistributorsFromProducers(DistributorData distributor) {
         for (int producerId : distributor.getProducersIds()) {
-            System.out.println("producer id = " + producerId);
             ProducerData producer = getUnitOfWork().getProducerRepository()
                     .get(Integer.toString(producerId));
             producer.getRegisteredDistributors()

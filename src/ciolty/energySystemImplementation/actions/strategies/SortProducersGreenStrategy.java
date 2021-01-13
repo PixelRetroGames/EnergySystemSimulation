@@ -17,9 +17,11 @@ public final class SortProducersGreenStrategy implements SortProducersStrategy {
             if (isRenewable(o1.getEnergyType()) == isRenewable(o2.getEnergyType())) {
                 if (Double.compare(o1.getPriceKW(), o2.getPriceKW()) == 0) {
                     if (o1.getEnergyPerDistributor() == o2.getEnergyPerDistributor()) {
-                        return -o1.getId() + o2.getId();
+                        return Integer.compare(o1.getId(),
+                                o2.getId());
                     }
-                    return -o1.getEnergyPerDistributor() + o2.getEnergyPerDistributor();
+                    return Integer.compare(o2.getEnergyPerDistributor(),
+                            o1.getEnergyPerDistributor());
                 }
                 return Double.compare(o1.getPriceKW(), o2.getPriceKW());
             }

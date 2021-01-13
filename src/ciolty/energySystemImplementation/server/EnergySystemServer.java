@@ -61,6 +61,7 @@ public final class EnergySystemServer extends ServerAbstract {
 
         monthlyActions = new ArrayList<String>();
         monthlyActions.addAll(Arrays.asList(
+                "monthly-update",
                 "distributor-set-price",
                 "consumers-clean-contracts",
                 "distributors-remove-finished-contracts",
@@ -120,8 +121,6 @@ public final class EnergySystemServer extends ServerAbstract {
 
     private void runAction(final int position) {
         MonthlyUpdateData actionData = input.getMonthlyUpdates().get(position);
-        actionController.execute(actionData);
-
         runMonthlyActions(actionData);
         print();
         currentRound++;
